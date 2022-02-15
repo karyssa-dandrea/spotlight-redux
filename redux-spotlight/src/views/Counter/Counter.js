@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment, reset } from './counterSlice';
+import { decrement, increment, reset, double } from './counterSlice';
 
 const Counter = () => {
   const count = useSelector((state) => state.counter.count);
@@ -33,6 +33,15 @@ const Counter = () => {
         }}
       >
         Reset
+      </button>
+
+      <button
+        aria-label="Double value"
+        onClick={() => {
+          dispatch(double());
+        }}
+      >
+        Double
       </button>
     </div>
   );
